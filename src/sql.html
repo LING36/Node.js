@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.1.1.js"></script>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+	<script>
+	//从数据库拿的数据
+		$.ajax({
+				type:"get",
+				dataType: 'json',
+				url:"http://localhost:9090/",
+				success:function(data){//请求成功
+					console.log(data)
+					$.each(data, function(index1,values){//遍历数据渲染到页面上
+						console.log(values)
+						var $p = $('<p/>').html(values.name).appendTo('.box');
+					})
+				}
+			});
+	</script>
+</html>
