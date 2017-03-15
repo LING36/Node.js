@@ -1,0 +1,6 @@
+*.zip
+
+font/
+fonts/
+doc/
+node_modules/
